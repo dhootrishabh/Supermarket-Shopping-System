@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product Details</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+
+	<div class="nevbar">
+		<div  class="nevdata">
+			<div id="menu" class="menu">
+				<div class="bar1"></div>
+  				<div class="bar2"></div>
+  				<div class="bar3"></div>
+			</div>
+		</div>	
+		
+	</div>
+	<div id="menulist" class="menulist" style="display: none;">
+		<ul>
+			<li>Link 1</li>
+			<hr>
+			<li>Link 2</li>
+			<hr>
+			<li>Link 3</li>
+		</ul>
+
+	</div>
+
+
+	<div class="content">
+<center>
+	<br><br>
+	<div id="new">
+		<h1>Product Information</h1>
+		<form id="newForm" action="product.php" method="post">
+		<p>Product <input type="text" name="product" id="newProduct"><br></p>
+		<p>Price <input type="text" name="price" id="cost"><br></p>
+		<p>Stock <input type="text" name="stock" id="stock"><br></p>
+		<button type="submit">Add Product</button>
+	</form>
+	</div>
+	
+</center>
+</div>
+	<script type="text/javascript">
+		var menu=document.getElementById("menu");
+		var list=document.getElementById("menulist");
+		menu.onclick=function(){
+    		menulist.style.display="block";
+		}
+	</script>
+</body>
+</html>
