@@ -1,4 +1,4 @@
-body{
+.body{
 	padding-top: 200px;
 }
 .modal{
@@ -30,7 +30,7 @@ body{
 	background-color: #91278f;
 	padding: 6px 30px;
 	border-radius: 2px;
-	border: none;	
+	border: none;
 }
 
 .secbtn:hover{
@@ -38,7 +38,7 @@ body{
 	font-size: 15px;
 	padding: 8px 35px;
 	color: #c8c900;
-	
+
 }
 
 .link:hover{
@@ -50,4 +50,47 @@ body{
 p{
 	font-family: sans-serif;
 	font-size: 17px;
+}
+
+.nevbar{
+	background-color: #91278f;
+	width:101.2%;
+	height: 13%;
+	border-radius: 3px;
+}
+.nevdata{
+	padding: 1%;
+}
+.logout{
+	margin-top: 0.8%;
+	margin-left: 70%;
+}
+.logoutbtn{
+	font-size: 14px;
+	color: #fff;
+	background-color: #c8c900;
+	padding: 6px 30px;
+	border-radius: 2px;
+	border: none;
+}
+
+.logoutbtn:hover{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	font-size: 15px;
+	padding: 8px 35px;
+	color: #91278f;
+
+}
+
+.body-content{
+	padding: 5%;
+}
+.submit-button{
+	padding-left: 35%;
+}
+table{
+	width: 30%;
+}
+td{
+	padding: 2%;
 }
