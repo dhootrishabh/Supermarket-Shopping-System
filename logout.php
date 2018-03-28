@@ -27,7 +27,7 @@ session_start();
 ?>
 <script type="text/javascript">
 	alert("Please pay your to exit the store.");
-	window.location.replace("customerIndex.html");
+	window.location.replace("bill.php");
 </script>
 <?php
 	}

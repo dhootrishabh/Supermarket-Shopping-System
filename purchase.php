@@ -33,24 +33,35 @@ if($row2['bill_id']==""){
   $row3=mysqli_fetch_array($result3);
 
   $sql_insert1="insert into bill_summary(bill_id,pname,rate,quantity) values('".$row3['bill_id']."','".$row1['Product_Name']."','".$row1['Price']."','".$quantity."')";
-  $result_insert1=mysqli_query($conn,$sql_insert);
-  if(!$result_insert){echo mysqli_error($conn);}
-
+  $result_insert1=mysqli_query($conn,$sql_insert1);
+  if(!$result_insert1){echo mysqli_error($conn);}
+  header("Location:customerIndex.html");
 }
   else {
-    $sql_insert1="insert into bill_summary(bill_id,pname,rate,quantity) values('".$row2['bill_id']."','".$row1['Product_Name']."','".$row1['Price']."','".$quantity."')";
-    $result_insert1=mysqli_query($conn,$sql_insert1);
-    if(!$result_insert1){echo mysqli_error($conn);}
+    $sql_billid="select * from bill_summary where bill_id='".$row2['bill_id']."' and pname='".$row1['Product_Name']."'";
+    $result_billid=mysqli_query($conn,$sql_billid);
+    if(!$result_billid){echo mysqli_error($conn);}
+    $row_billid=mysqli_fetch_array($result_billid);
+
+    if($row_billid['bill_id']==""){
+      $sql_insert1="insert into bill_summary(bill_id,pname,rate,quantity) values('".$row2['bill_id']."','".$row1['Product_Name']."','".$row1['Price']."','".$quantity."')";
+      $result_insert1=mysqli_query($conn,$sql_insert1);
+      if(!$result_insert1){echo mysqli_error($conn);}
+    }
+    else{
+      $qty=$quantity+$row_billid['quantity'];
+      $sql4="update bill_summary set quantity=".$qty." where bill_id='".$row_billid['bill_id']."' and pname='".$row_billid['pname']."'";
+      $result4=mysqli_query($conn,$sql4);
+      if(!$result4){echo mysqli_error($conn);}
+    }
 
     $amount=$amount+$row2['amount'];
     $quantity=$quantity+$row2['quantity'];
 
-    echo $quantity."<br>";
-    echo $amount."<br>";
-
     $sql_update="update bill set amount='".$amount."',quantity='".$quantity."' where bill_id='".$row2['bill_id']."'";
     $result_update=mysqli_query($conn,$sql_update);
     if(!$result_update){echo mysqli_error($conn);}
+    header("Location:customerIndex.html");
   }
 
 ?>
