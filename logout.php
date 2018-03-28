@@ -9,12 +9,21 @@ session_start();
 	$row1=mysqli_fetch_array($result1);
 	$cid=$row1['Cust_id'];
 
-	$sql2="select paid from bill where c_id='".$cid."'";
+	$sql2="select bill_id,paid from bill where c_id='".$cid."'";
 	$result2=mysqli_query($conn,$sql2);
 	if(!$result2){echo mysqli_error($conn);}
 	$row2=mysqli_fetch_array($result2);
 	$paid=$row2['paid'];
-  echo $paid;
+
+	if($row2['bill_id']==""){
+		$login=0;
+		$sql="update customer set login='".$login."' where username='".$uname."'";
+		$result=mysqli_query($conn,$sql);
+		if(!$result){echo mysqli_error();}
+		header("Location:customer.html");
+		session_destroy();
+	}
+	else{
 	if($paid==1){
 		$login=0;
 		$sql="update customer set login='".$login."' where username='".$uname."'";
@@ -31,5 +40,5 @@ session_start();
 </script>
 <?php
 	}
-
+}
 ?>
