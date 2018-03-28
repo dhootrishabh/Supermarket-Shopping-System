@@ -61,9 +61,13 @@ p{
 .nevdata{
 	padding: 1%;
 }
-.logout{
+.bill{
+	margin-left: 2%;
 	margin-top: 0.8%;
-	margin-left: 70%;
+}
+.logout{
+	margin-top: -3.5%;
+	margin-left: 60%;
 }
 .logoutbtn{
 	font-size: 14px;
@@ -81,16 +85,27 @@ p{
 	color: #91278f;
 
 }
-
 .body-content{
 	padding: 5%;
 }
 .submit-button{
 	padding-left: 35%;
 }
-table{
-	width: 30%;
+.bill-table{
+	width: 500px;
+	margin-left: 25%;
+	/* border-radius: 5px;
+	padding: 3%; */
+}
+th{
+	font-size: 18px;
+	padding: 3%;
 }
 td{
-	padding: 2%;
+	padding: 3%;
+}
+
+.form-head{
+	padding-left: 10%;
+	font-size: 30px;
 }
