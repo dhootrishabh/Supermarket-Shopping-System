@@ -25,7 +25,7 @@
   </div>
 </div>
 <div class="body-content">
-
+<center>
   <table class="bill-table table-bordered table-hover" border="1px"> <tr><th>Bill Id</th><th>Total Amount</th><th>Total Item</th><th>Paid/Unpaid</th></tr>
   <?php
     session_start();
@@ -54,6 +54,12 @@
 
   ?>
   </table>
+  <div class="pay">
+  <form action="pay.php?pay=0" method="post">
+    <button class="secbtn" type="submit">Pay Amount</button>
+  </form>
+</div>
+</center>
 </div>
 </body>
 </html>

@@ -93,9 +93,7 @@ p{
 }
 .bill-table{
 	width: 500px;
-	margin-left: 25%;
-	/* border-radius: 5px;
-	padding: 3%; */
+	
 }
 th{
 	font-size: 18px;
@@ -108,4 +106,8 @@ td{
 .form-head{
 	padding-left: 10%;
 	font-size: 30px;
+}
+
+.pay{
+	margin-top: 2%;
 }
