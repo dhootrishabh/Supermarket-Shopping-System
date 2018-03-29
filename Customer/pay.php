@@ -1,5 +1,8 @@
 <?php
   session_start();
+  if($_SESSION['uname']==""){
+    header("Location:customer.html");
+  }
   $cname=$_SESSION['uname'];
 
   $conn=mysqli_connect('localhost','root','','supermarket');
@@ -14,7 +17,7 @@
     $sql_pay="update bill set paid='".$paid."' where c_id='".$row_cid['Cust_id']."'";
     $result_pay=mysqli_query($conn,$sql_pay);
     if(!$result_pay){echo mysqli_error($conn);}
-    header("Location:customerIndex.html");
+    header("Location:customerIndex.php");
   }
 
 ?>

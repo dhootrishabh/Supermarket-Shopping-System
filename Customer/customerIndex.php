@@ -1,3 +1,10 @@
+<?php
+session_start();
+if($_SESSION['uname']==""){
+  header("Location:customer.html");
+}
+
+?>
 <html>
 <head>
     <title>Customer Login</title>

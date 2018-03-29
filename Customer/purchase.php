@@ -1,5 +1,8 @@
 <?php
 session_start();
+if($_SESSION['uname']==""){
+  header("Location:customer.html");
+}
 $conn=mysqli_connect('localhost','root','','supermarket');
 $pid=$_POST['product_id'];
 $quantity=$_POST['quantity'];
@@ -10,10 +13,17 @@ $result=mysqli_query($conn,$sql);
 if(!$result){echo mysqli_error($conn);}
 $row=mysqli_fetch_array($result);
 $cid=$row['Cust_id'];
+
 $sql1="select * from product where Product_Id='".$pid."'";
 $result1=mysqli_query($conn,$sql1);
 if(!$result1){echo mysqli_error($conn);}
 $row1=mysqli_fetch_array($result1);
+
+$pqty=$row1['Stock']-$quantity;
+
+$sql_product="update product set Stock='".$pqty."' where Product_Id='".$pid."'";
+$result_product=mysqli_query($conn,$sql_product);
+if(!$result_product){echo mysqli_error($conn);}
 
 $amount=$row1['Price']*$quantity;
 $paid=0;
@@ -35,7 +45,7 @@ if($row2['bill_id']==""){
   $sql_insert1="insert into bill_summary(bill_id,pname,rate,quantity) values('".$row3['bill_id']."','".$row1['Product_Name']."','".$row1['Price']."','".$quantity."')";
   $result_insert1=mysqli_query($conn,$sql_insert1);
   if(!$result_insert1){echo mysqli_error($conn);}
-  header("Location:customerIndex.html");
+  header("Location:customerIndex.php");
 }
   else {
     $sql_billid="select * from bill_summary where bill_id='".$row2['bill_id']."' and pname='".$row1['Product_Name']."'";
@@ -61,7 +71,7 @@ if($row2['bill_id']==""){
     $sql_update="update bill set amount='".$amount."',quantity='".$quantity."' where bill_id='".$row2['bill_id']."'";
     $result_update=mysqli_query($conn,$sql_update);
     if(!$result_update){echo mysqli_error($conn);}
-    header("Location:customerIndex.html");
+    header("Location:customerIndex.php");
   }
 
 ?>

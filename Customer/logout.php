@@ -1,5 +1,8 @@
 <?php
 session_start();
+if($_SESSION['uname']==""){
+  header("Location:customer.html");
+}
 	$conn=mysqli_connect('localhost','root','','supermarket');
 	$uname=$_SESSION['uname'];
 

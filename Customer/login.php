@@ -10,7 +10,7 @@ session_start();
 	if(!$result){echo mysqli_error($conn);}
 	$row=mysqli_fetch_array($result);
 	if($row['username']==""){
-		
+
 ?>
 <script type="text/javascript">
 	alert("User not Registered.");
@@ -25,7 +25,7 @@ session_start();
 				$result1=mysqli_query($conn,$sql1);
 				if(!$result1){echo mysqli_error();}
 				$_SESSION['uname']=$uname;
-				header("Location:customerIndex.html");
+				header("Location:customerIndex.php");
 			}
 			else{
 ?>
@@ -35,6 +35,6 @@ session_start();
 </script>
 <?php
 			}
-			
+
 		}
 ?>

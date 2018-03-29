@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if($_SESSION['uname']==""){
+  header("Location:customer.html");
+}
+
+?>
 <html>
 <head>
     <title>Customer Login</title>
@@ -25,11 +33,12 @@
   </div>
 </div>
 <div class="body-content">
+  <center>
   <table class="bill-table table-bordered table-hover" border="1px"> <tr><th>Product Name</th><th>Rate</th><th>Quantity</th></tr>
   <?php
     session_start();
     $cname=$_SESSION['uname'];
-
+    $bill_id=$_GET['bill_id'];
     $conn=mysqli_connect('localhost','root','','supermarket');
 
     $sql_cid="select Cust_id from customer where Cust_Name='".$cname."'";
@@ -37,12 +46,7 @@
     if(!$result_cid){echo mysqli_error($conn);}
     $row_cid=mysqli_fetch_array($result_cid);
 
-    $sql_billid="select bill_id from bill where c_id='".$row_cid['Cust_id']."'";
-    $result_billid=mysqli_query($conn,$sql_billid);
-    if(!$result_billid){echo mysqli_error($conn);}
-    $row_billid=mysqli_fetch_array($result_billid);
-
-    $sql="select * from bill_summary where bill_id='".$row_billid['bill_id']."'";
+    $sql="select * from bill_summary where bill_id='".$bill_id."'";
     $result=mysqli_query($conn,$sql);
     if(!$result){echo mysqli_error($conn);}
     while($row=mysqli_fetch_array($result)){
@@ -52,6 +56,12 @@
 
   ?>
   </table>
+  <div class="pay">
+  <form action="bill.php" method="post">
+    <button class="secbtn" type="submit">Back</button>
+  </form>
+</div>
+</center>
 </div>
 </body>
 </html>
