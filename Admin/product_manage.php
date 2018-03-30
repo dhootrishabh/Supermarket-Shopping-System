@@ -16,31 +16,23 @@ if($_SESSION['aname']==""){
 </head>
 <body>
 
-
   <div class="nevbar">
-		<div  class="nevdata">
-			<div id="menu" class="menu">
-					<div class="bar1"></div>
+  	<div  class="nevdata">
+  		<div id="menu" class="menu">
+  				<div class="bar1"></div>
   				<div class="bar2"></div>
   				<div class="bar3"></div>
-			</div>
-			<div class="logout">
-	      <form class="logout" action="logout.php" method="post">
-	      	<button class="logoutbtn">Logout</button>
-	      </form>
-	    </div>
-		</div>
-
-	</div>
-	<div id="menulist" class="menulist" style="display: none;">
-		<table class="list table-bordered table-hover">
-      <tr><td class="list-td"><a href="customerActivity.php">Customer Activity</a></td></tr>
-			<tr><td class="list-td"><a href="new.php">Add/Update Product</a></td></tr>
-			<tr><td class="list-td"><a href="product_manage.php">Products Availablity</a></td></tr>
-		</table>
-	</div>
-
-
+  		</div>
+      <div class="menulist" style="display: none;">
+        <div class="list list-group">
+          <a href="customerActivity.php" class="list-group-item list-group-item-action">Customer Activity</a>
+          <a href="product_manage.php" class="list-group-item list-group-item-action">Product List</a>
+          <a href="new.php" class="list-group-item list-group-item-action">Add/Update Product</a>
+          <a href="logout.php" class="list-group-item list-group-item-action">Logout</a>
+        </div>
+      </div>
+  	</div>
+  </div>
 	<div class="content">
     <b><p class="head">Products in Store</p></b>
 <center>

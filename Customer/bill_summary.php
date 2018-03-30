@@ -36,7 +36,6 @@ if($_SESSION['uname']==""){
   <center>
   <table class="bill-table table-bordered table-hover" border="1px"> <tr><th>Product Name</th><th>Rate</th><th>Quantity</th></tr>
   <?php
-    session_start();
     $cname=$_SESSION['uname'];
     $bill_id=$_GET['bill_id'];
     $conn=mysqli_connect('localhost','root','','supermarket');
