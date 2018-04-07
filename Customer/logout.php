@@ -33,7 +33,7 @@ if($_SESSION['uname']==""){
 		$result=mysqli_query($conn,$sql);
 		if(!$result){echo mysqli_error();}
 		header("Location:customer.html");
-		session_destroy();
+		unset($_SESSION['uname']);
 	}
 	else{
 ?>

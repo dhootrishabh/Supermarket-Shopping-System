@@ -1,0 +1,157 @@
+.content{
+	z-index: -1;
+	position: static;
+}
+body{
+	background-color: #fff;
+	max-width: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+p{
+	font-family: sans-serif;
+	font-size: 17px;
+}
+.head{
+	margin-left: 435px;
+	font-size: 24px;
+}
+#head{
+	font-size: 28px;
+}
+.nevbar{
+	background-color: #3695E4;
+	width:101.2%;
+	height: 70px;
+	margin-top: -8px;
+	margin-left: -8px;
+	border-radius: 3px;
+	margin-bottom: 70px;
+	position: relative;
+}
+
+.menu{
+	padding-top: 25px;
+	margin-left: 50px;
+	cursor: pointer;
+	z-index: 3;
+	position: relative;
+}
+.list{
+	max-width: 300px;
+}
+.list-td{
+	padding: 5%;
+}
+.name{
+	margin-left: 95px;
+	margin-top: -28px;
+	font-size: 28px;
+	color: #fff;
+}
+.menulist{
+	z-index: 4;
+	opacity: 1;
+	margin-left: 8px;
+	margin-top:12px;
+	position: relative;
+}
+th{
+	font-size: 16px;
+}
+td,th{
+	padding: 3%;
+}
+
+.bar1,.bar2,.bar3{
+	width: 28px;
+	height: 4px;
+	background-color: #fff;
+	margin-top: 3px;
+	border-radius: 2px;
+
+
+}
+
+.btn{
+	font-size: 18px;
+	color: #fff;
+	background-color: #3695E4;
+	padding: 10px 35px;
+	border-radius: 2px;
+	border-color: #005073;
+}
+.btn:hover{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	font-size:20px;
+	padding: 12px 40px;
+	color: #fff;
+}
+#new{
+	position: relative;
+}
+.cust-table{
+	width: 500px;
+}
+.red{
+	color: red;
+}
+.back{
+	margin-top: 2%;
+}
+.body{
+	padding-top: 200px;
+}
+.modal{
+	display: none;
+	width: 100%;
+	height: 100%;
+	padding: 5% 33%;
+	background-color: rgba(0,0,0,.5);
+}
+.modal-head{
+	background-color: #3695E4;
+	color: #fff;
+	height: 10%;
+	border-radius: 5px;
+}
+.head-text{
+	size:16px;
+	text-align: center;
+	padding: 7px 0px 0px 0px;
+
+}
+.modal-body{
+	padding: 5%;
+
+}
+
+.secbtn{
+	font-size: 14px;
+	color: #fff;
+	background-color: #3695E4;
+	padding: 6px 30px;
+	border-radius: 2px;
+	border: none;
+}
+
+.secbtn:hover{
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	font-size: 15px;
+	padding: 8px 35px;
+	color: #fff;
+
+}
+
+.link:hover{
+	text-decoration: underline;
+	color: #3695E4;
+	cursor: pointer;
+}
+
+.body-content{
+	padding: 5%;
+}
+.submit-button{
+	padding-left: 35%;
+}

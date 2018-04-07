@@ -7,11 +7,11 @@ if($_SESSION['aname']==""){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Customer Bill Summary</title>
+	<title>Pocket Mart-Customer Bill Summary</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="admin_style.css">
+	<link rel="stylesheet" type="text/css" href="adminstyles.css">
 </head>
 <body>
 
@@ -23,12 +23,15 @@ if($_SESSION['aname']==""){
   				<div class="bar2"></div>
   				<div class="bar3"></div>
   		</div>
+      <div>
+        <p class="name">Pocket Mart </p>
+      </div>
       <div class="menulist" style="display: none;">
         <div class="list list-group">
           <a href="customerActivity.php" class="list-group-item list-group-item-action">Customer Activity</a>
           <a href="product_manage.php" class="list-group-item list-group-item-action">Product List</a>
           <a href="new.php" class="list-group-item list-group-item-action">Add/Update Product</a>
-          <a href="logout.php" class="list-group-item list-group-item-action">Logout</a>
+          <a href="logoutAdmin.php" class="list-group-item list-group-item-action">Logout</a>
         </div>
       </div>
   	</div>

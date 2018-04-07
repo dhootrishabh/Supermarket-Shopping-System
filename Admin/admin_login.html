@@ -1,10 +1,10 @@
 <html>
 <head>
-    <title>Admin Login</title>
+    <title>Pocket Mart</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="admin_style.css">
+    <link rel="stylesheet" type="text/css" href="adminstyles.css">
 </head>
 
 <body class="body">
@@ -14,13 +14,17 @@
         <div class="modal-head">
             <p class="head-text"> Admin Login </p>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" style="padding-left: 10%;">
+          <img src="logo.png" style="margin-left: 130px; margin-bottom: 20px;">
+          <table>
             <form method="post" action="login.php">
-                <p>Admin Name <input type="text" name="adminid"></p>
-                <p>Password <input type="password" name="password"></p><br>
-                <center><button class="secbtn">Login</button><br><br>
-                <p class="link" id="signupbtn"> Not a registered Admin? Sign Up</p></center>
+                <tr><td><p>Admin Name</p></td> <td><input type="text" name="adminid"></td></tr>
+                <tr><td><p>Password </p></td><td><input type="password" name="password"></td></tr><tr><td colspan="2"></td></tr>
+              <tr><td colspan="2" style="padding-left: 40px;"><center><button class="secbtn">Login</button></center></td></tr>
+                <tr><td colspan="2"><center><p class="link" id="signupbtn" style="padding-left:30px;"> Not a registered Admin? Sign Up</p></center></td></tr>
             </form>
+          </table>
+
         </div>
     </div>
 </div>
@@ -30,19 +34,20 @@
             <p class="head-text"> Sign Up </p>
         </div>
         <div class="modal-body">
+          <img src="logo.png" style="margin-left: 150px; margin-bottom: 20px;">
+          <table>
             <form method="post" action="signup.php">
-                <p>Admin Name <input type="text" name="newAdmin"></p>
-                <p>Password <input type="password" name="newPass"></p>
-                <p>Re-enter Password <input type="password" name="reNewPass"></p><br>
-                <center><button class="secbtn">Sign Up</button><br><br>
-                <p class="link" id="loginbtn"> Already an Admin? Login</p></center>
+                <tr><td><p>Admin Name </p></td><td><input type="text" name="newAdmin"></td></tr>
+                <tr><td><p>Password </p></td><td><input type="password" name="newPass"></td></tr>
+                <tr><td><p>Re-enter Password </p></td><td><input type="password" name="reNewPass"></td></tr>
+                <tr><td colspan="2"style="padding-left: 40px;"><center><button class="secbtn">Sign Up</button></center></td></tr>
+                <tr><td colspan="2"><center><p class="link" id="loginbtn" style="padding-left: 20px;"> Already an Admin? Login</p></center></td></tr>
             </form>
 
         </div>
     </div>
 </div>
 
-<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 <script type="text/javascript">
 //Customer
 var loginmodal=document.getElementById("loginmodal");

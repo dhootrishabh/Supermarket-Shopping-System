@@ -36,7 +36,7 @@ if($_SESSION['uname']==""){
 <center>
   <table class="bill-table table-bordered table-hover" border="1px"> <tr><th>Bill Id</th><th>Total Amount</th><th>Total Item</th><th>Paid/Unpaid</th></tr>
   <?php
-    
+
     $cname=$_SESSION['uname'];
 
     $conn=mysqli_connect('localhost','root','','supermarket');
@@ -63,9 +63,14 @@ if($_SESSION['uname']==""){
   ?>
   </table>
   <div class="pay">
+    <table><tr><td>
   <form action="pay.php?pay=0" method="post">
     <button class="secbtn" type="submit">Pay Amount</button>
-  </form>
+  </form></td>
+  <td>
+    <form action="customerIndex.php" method="post">
+      <button class="secbtn" type="submit">Back</button>
+    </form></td></tr></table>
 </div>
 </center>
 </div>
